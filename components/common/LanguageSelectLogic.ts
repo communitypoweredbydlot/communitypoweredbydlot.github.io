@@ -6,7 +6,11 @@ export default class LanguageSelectLogic extends Vue {
 
   get availableLocales () {
     const locales = this.$i18n.locales || []
-    return locales.filter((i: any) => i.code !== this.$i18n.locale)
+    return []
+    /* return locales.filter((i: string | any) => {
+      const code = i instanceof String ? i : i.code
+      return code !== this.$i18n.locale
+    }) */
   }
 
   onClickOutside () {
